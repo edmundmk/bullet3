@@ -8,3 +8,7 @@ if meson.get_compiler( 'cpp' ).has_argument( '-Wno-unused-function' )
 endif
 
 subdir( 'src' )
+
+bullet_lib = [ bullet_lm_lib, bullet_bc_lib, bullet_bd_lib ]
+bullet_lic = files( 'LICENSE.txt' )
+bullet_dep = declare_dependency( include_directories : include, link_with : bullet_lib )
